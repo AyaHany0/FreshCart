@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+/* tailwindcss directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #0aad0a;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+
+  --rating-color: #ffc908;
+}
+
+body {
+  font-family: var(--font-family) !important;
+}
+.loaderIcon {
+  margin-left: 7px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@layer utilities {
+  .darkBackground {
+    background-image: url("./assets/imgs/dark-pattern.svg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+@layer utilities {
+  .darkcustomBackground {
+    background-image: url("./assets/imgs/dark-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 130% 140%;
+  }
+}
+
+@layer utilities {
+  .lightBackground {
+    background-image: url("./assets/imgs/light-patten.svg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+@layer utilities {
+  .notfound {
+    background-image: url("./assets/imgs/notfound.svg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.slick-next::before,
+.slick-prev::before {
+  background-color: green;
+  border-radius: 50%;
+  padding: 1px;
+}
