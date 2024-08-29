@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.8.9",
+    "@tanstack/react-query": "^5.52.2",
+    "@tanstack/react-query-devtools": "^5.52.2",
     "axios": "^1.7.2",
     "crypto-js": "^4.2.0",
     "flowbite": "^2.5.1",

@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import ImageSlider from "./ImageSlider";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
@@ -17,35 +18,37 @@ import { CartContext } from "../../Context/CartContext";
 export default function ProductDetails() {
   const { addProductToCart } = useContext(CartContext);
   let { id } = useParams();
-  const [productdetails, setProductDetails] = useState(null);
-  const [relatedProducts, setRelatedProducts] = useState([]);
 
-  const [isLoading, setIsLoading] = useState(true);
-  async function getProductDetails() {
-    setIsLoading(true);
-    let { data } = await axios.get(
-      "https://ecommerce.routemisr.com/api/v1/products/" + id
-    );
-    console.log(data.data);
-    setProductDetails(data.data);
-    getRelatedProducts(data.data?.category._id);
-    setIsLoading(false);
-  }
-  useEffect(() => {
-    getProductDetails();
-  }, [id]);
-  async function getRelatedProducts(categoryId) {
-    let { data } = await axios.get(
-      "https://ecommerce.routemisr.com/api/v1/products/",
-      {
-        params: {
-          category: categoryId,
-        },
+  const { data: productdetails, isLoading } = useQuery({
+    queryKey: ["productdetails", id],
+    queryFn: async () => {
+      const response = await axios.get(
+        `https://ecommerce.routemisr.com/api/v1/products/${id}`
+      );
+      return response.data.data;
+    },
+    enabled: !!id, // Ensure query is only run if id exists
+  });
+
+  const { data: relatedProducts } = useQuery({
+    queryKey: ["relatedProducts", productdetails?.category._id],
+    queryFn: async () => {
+      if (productdetails?.category._id) {
+        const response = await axios.get(
+          "https://ecommerce.routemisr.com/api/v1/products/",
+          {
+            params: {
+              category: productdetails.category._id,
+            },
+          }
+        );
+        return response.data.data;
       }
-    );
-    console.log(data.data);
-    setRelatedProducts(data.data);
-  }
+      return [];
+    },
+    enabled: !!productdetails?.category._id, // Only fetch if the category ID exists
+  });
+
   return (
     <>
       <Helmet>

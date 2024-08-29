@@ -13,27 +13,23 @@ import axios from "axios";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useQuery } from "@tanstack/react-query";
 
 export function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [categories, setCategories] = useState(null);
-  useEffect(() => {
-    getCategories();
-  }, []);
-  async function getCategories() {
-    setIsLoading(true);
-    let { data } = await axios.get(
-      "https://ecommerce.routemisr.com/api/v1/categories",
-      {
-        headers: {
-          token: localStorage.getItem("token"),
-        },
-      }
-    );
-
-    setCategories(data?.data);
-    setIsLoading(false);
-  }
+  const { data: categories, isLoading } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () =>
+      axios
+        .get("https://ecommerce.routemisr.com/api/v1/categories", {
+          headers: {
+            token: localStorage.getItem("token"),
+          },
+        })
+        .then((res) => res.data.data),
+    staleTime: 5000,
+    refetchInterval: 8000,
+    cacheTime: 500000,
+  });
 
   let settings = {
     dots: false,

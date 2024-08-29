@@ -3,50 +3,56 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 export default function Brands() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [brands, setBrands] = useState(null);
+  function getBrands() {
+    return axios.get("https://ecommerce.routemisr.com/api/v1/brands", {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
+  }
+
+  const { data: brands, isLoading: brandsIsLoading } = useQuery({
+    queryKey: ["brands"],
+    queryFn: getBrands,
+    select: (data) => data.data.data,
+    staleTime: 5000,
+    refetchInterval: 8000,
+    cacheTime: 500000,
+  });
+
+  function getSubBrands(brandId) {
+    return axios.get(
+      "https://ecommerce.routemisr.com/api/v1/brands/" + brandId,
+      {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      }
+    );
+  }
+  const [selectedBrandId, setSelectedBrandId] = useState(null);
+  const { data: subBrands, isLoading: subBrandsIsLoading } = useQuery({
+    queryKey: ["subBrands", selectedBrandId],
+    queryFn: () => getSubBrands(selectedBrandId),
+    select: (data) => data.data.data,
+    staleTime: 5000,
+    refetchInterval: 8000,
+    cacheTime: 500000,
+    enabled: !!selectedBrandId,
+  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    getBrands();
-  }, []);
-  async function getBrands() {
-    setIsLoading(true);
-    let { data } = await axios
-      .get("https://ecommerce.routemisr.com/api/v1/brands", {
-        headers: {
-          token: localStorage.getItem("token"),
-        },
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-    setBrands(data);
-  }
-  const [subBrands, setsubBrands] = useState(null);
-
-  async function getSubBrands(brandId) {
-    setIsLoading(true);
-    let { data } = await axios
-      .get("https://ecommerce.routemisr.com/api/v1/brands/" + brandId, {
-        headers: {
-          token: localStorage.getItem("token"),
-        },
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-    setsubBrands(data);
-  }
-
   const handleOpenModal = (brandId) => {
-    getSubBrands(brandId);
+    setSelectedBrandId(brandId);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setSelectedBrandId(null);
   };
   return (
     <div>
@@ -54,7 +60,7 @@ export default function Brands() {
         <title>Brands</title>
       </Helmet>
 
-      {isLoading ? (
+      {brandsIsLoading ? (
         <LoadingScreen />
       ) : (
         <motion.div
@@ -72,7 +78,7 @@ export default function Brands() {
                   </h1>
                 </div>
                 <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-x-8 w-full gap-5 ">
-                  {brands?.data.map((brand) => {
+                  {brands?.map((brand) => {
                     return (
                       <div key={brand._id}>
                         <div className="relative group flex justify-center items-center h-full w-full rounded-lg transition-all ease-in-out duration-200 hover:border hover:border-gray-100 dark:border-green-900 hover:shadow-[0_2px_10px_-3px_rgba(26,50,0.3)]">
@@ -145,12 +151,12 @@ export default function Brands() {
                   {
                     <div className="flex justify-evenly items-center">
                       <span className="p-5 border-2 border-green-600 rounded-lg text-black ">
-                        {subBrands?.data.name}
+                        {subBrands?.name}
                       </span>
                       <img
                         className=" rounded-lg object-cover "
-                        src={subBrands?.data.image}
-                        alt={subBrands?.data.name}
+                        src={subBrands?.image}
+                        alt={subBrands?.name}
                       />
                     </div>
                   }

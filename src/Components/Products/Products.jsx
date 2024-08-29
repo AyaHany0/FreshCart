@@ -5,36 +5,49 @@ import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import SearchIcon from "../SearchIcon/SearchIcon";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Products() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  async function getProducts() {
-    setIsLoading(true);
-    try {
-      const { data } = await axios.get(
-        "https://ecommerce.routemisr.com/api/v1/products"
-      );
-      setProducts(data.data);
-    } catch (error) {
-      setError("Failed to load products. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
+  function getProducts() {
+    return axios.get("https://ecommerce.routemisr.com/api/v1/products");
   }
+  let { data, isLoading, isError, error } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+    select: (data) => data.data.data,
+    staleTime: 5000,
+    refetchInterval: 8000,
+    cacheTime: 500000,
+  });
+
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  // const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
+
+  // async function getProducts() {
+  //   setIsLoading(true);
+  //   try {
+  //     const { data } = await axios.get(
+  //       "https://ecommerce.routemisr.com/api/v1/products"
+  //     );
+  //     setProducts(data.data);
+  //   } catch (error) {
+  //     setError("Failed to load products. Please try again later.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }
 
   function search(e) {
     setSearchTerm(e.target.value);
   }
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = data?.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -45,7 +58,7 @@ export default function Products() {
       </Helmet>
       {isLoading ? (
         <LoadingScreen />
-      ) : error ? (
+      ) : isError ? (
         <div className="text-center text-red-500">{error}</div>
       ) : (
         <motion.div

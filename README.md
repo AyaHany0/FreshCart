@@ -26,6 +26,7 @@ Axios - HTTP client for making API requests.
 React Router - Routing library for navigation.
 jwt-decode - Decode JWT tokens.
 React Helmet - Manage document head for SEO.
+React Query - Manage server state and API data fetching with ease.
 Toastify - Notification system.
 React Icons - Icon library.
 Framer Motion - Animation library.

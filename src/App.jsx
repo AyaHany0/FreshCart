@@ -23,12 +23,15 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import ShippingAddress from "./Components/Shipping/ShippingAddress";
 import Wishlist from "./Components/Wishlist/Wishlist";
 import Allorders from "./Components/AllOrders/Allorders";
-
+import Profile from "./Components/Profile/Profile";
 import CartContextProvider from "./Context/CartContext";
 import { ToastContainer } from "react-toastify";
-import Profile from "./Components/Profile/Profile";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
+  const queryClient = new QueryClient();
+
   let router = createBrowserRouter([
     {
       path: "",
@@ -162,12 +165,15 @@ function App() {
   ]);
   return (
     <>
-      <ToastContainer />
-      <CartContextProvider>
-        <AuthContextProvider>
-          <RouterProvider router={router}></RouterProvider>
-        </AuthContextProvider>
-      </CartContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <ToastContainer />
+        <CartContextProvider>
+          <AuthContextProvider>
+            <RouterProvider router={router}></RouterProvider>
+          </AuthContextProvider>
+        </CartContextProvider>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </>
   );
 }
