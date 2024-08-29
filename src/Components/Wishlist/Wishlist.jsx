@@ -79,9 +79,8 @@ export default function Wishlist() {
                               </h2>
                             </div>
 
-                            <div className="flex flex-col space-y-3 text-sm font-medium mt-4 justify-center items-center  ">
-                              <div className="md:w-3/4">
-                                {" "}
+                            <div className="flex flex-col space-y-3 text-sm font-medium mt-4 justify-center items-center pr-4 ">
+                              <div className="md:w-1/2">
                                 <button
                                   onClick={() => {
                                     removeProductFromWishlist(
@@ -99,7 +98,7 @@ export default function Wishlist() {
                                   <span>Remove from Wishlist</span>
                                 </button>
                               </div>
-                              <div className="md:w-3/4">
+                              <div className="md:w-1/2">
                                 <AddToCartButton
                                   addProductToCart={addProductToCart}
                                   productId={product._id}

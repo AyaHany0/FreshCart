@@ -149,12 +149,10 @@ export default function Brands() {
               <div className="p-4 md:p-5 space-y-4 ">
                 <div className="text-center dark:text-white">
                   {
-                    <div className="flex justify-evenly items-center">
-                      <span className="p-5 border-2 border-green-600 rounded-lg text-black ">
-                        {subBrands?.name}
-                      </span>
+                    <div className="flex flex-col sm:flex-row sm:justify-evenly sm:items-center p-5 border-2 border-green-600 rounded-lg text-black">
+                      <span className="mb-4 sm:mb-0">{subBrands?.name}</span>
                       <img
-                        className=" rounded-lg object-cover "
+                        className="rounded-lg object-cover w-full sm:w-auto"
                         src={subBrands?.image}
                         alt={subBrands?.name}
                       />
