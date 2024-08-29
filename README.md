@@ -4,35 +4,35 @@ This is the frontend for an eCommerce platform built with React, utilizing vario
 
 # Features
 
-User Authentication: Register, log in, and log out using JWT tokens.
-Form Handling: Manage form states with Formik and Yup for validation.
-Product Management: View, add to cart, remove, and clear cart items; manage a wishlist with add and remove functionalities.
-Categories & Brands: Browse products by categories and brands.
-Checkout: Complete orders with options for online payment or cash on delivery.
-Order Display: View order details after payment.
-Password Management: Support for password reset and forget password functionality.
-Sound Effects: Fun sound effects for key actions like adding/removing items from the cart or wishlist, checkout, and after payment.
-API Integration: Interact with backend services using Axios.
-Routing: Navigate through the app using React Router with protected routes for secure pages.
-UI Enhancements: Animate elements with Framer Motion, use React Slick for carousels, and enhance the UI with React Icons and React Helmet.
-Notifications: Display alerts and messages using Toastify.
+- User Authentication: Register, log in, and log out using JWT tokens.
+- Form Handling: Manage form states with Formik and Yup for validation.
+- Product Management: View, add to cart, remove, and clear cart items; manage a wishlist with add and remove functionalities.
+- Categories & Brands: Browse products by categories and brands.
+- Checkout: Complete orders with options for online payment or cash on delivery.
+- Order Display: View order details after payment.
+- Password Management: Support for password reset and forget password functionality.
+- Sound Effects: Fun sound effects for key actions like adding/removing items from the cart or wishlist, checkout, and after payment.
+- API Integration: Interact with backend services using Axios.
+- Routing: Navigate through the app using React Router with protected routes for secure pages.
+- UI Enhancements: Animate elements with Framer Motion, use React Slick for carousels, and enhance the UI with React Icons and React Helmet.
+- Notifications: Display alerts and messages using Toastify.
 
 # Libraries and Technologies
 
-React - JavaScript library for building user interfaces.
-Formik - Form state management in React.
-Yup - Schema validation for form inputs.
-Axios - HTTP client for making API requests.
-React Router - Routing library for navigation.
-jwt-decode - Decode JWT tokens.
-React Helmet - Manage document head for SEO.
-React Query - Manage server state and API data fetching with ease.
-Toastify - Notification system.
-React Icons - Icon library.
-Framer Motion - Animation library.
-React Slick - Carousel component.
-Context API - Manage global state.
-Protected Routes - Restrict access to certain parts of the application.
+- React - JavaScript library for building user interfaces.
+- Formik - Form state management in React.
+- Yup - Schema validation for form inputs.
+- Axios - HTTP client for making API requests.
+- React Router - Routing library for navigation.
+- jwt-decode - Decode JWT tokens.
+- React Helmet - Manage document head for SEO.
+- React Query - Manage server state and API data fetching with ease.
+- Toastify - Notification system.
+- React Icons - Icon library.
+- Framer Motion - Animation library.
+- React Slick - Carousel component.
+- Context API - Manage global state.
+- Protected Routes - Restrict access to certain parts of the application.
 
 # Purpose
 
