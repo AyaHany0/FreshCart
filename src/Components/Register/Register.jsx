@@ -356,7 +356,7 @@ export default function Register() {
                 )}
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col justify-center items-center">
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center shadow-xl py-2.5 px-5 text-sm font-semibold tracking-wider rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none transition-all disabled:bg-green-900"
@@ -364,7 +364,7 @@ export default function Register() {
                 >
                   Register {isLoading && <ImSpinner9 className="loaderIcon" />}
                 </button>
-                <p className="text-black-800 text-sm mt-8 text-center">
+                <p className="text-black text-sm mt-8 text-center">
                   Already have an account?
                   <Link
                     to={"/login"}

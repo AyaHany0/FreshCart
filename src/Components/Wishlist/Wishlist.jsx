@@ -80,7 +80,7 @@ export default function Wishlist() {
                             </div>
 
                             <div className="flex flex-col space-y-3 text-sm font-medium mt-4 justify-center items-center pr-4 ">
-                              <div className="md:w-1/2">
+                              <div>
                                 <button
                                   onClick={() => {
                                     removeProductFromWishlist(
@@ -98,7 +98,7 @@ export default function Wishlist() {
                                   <span>Remove from Wishlist</span>
                                 </button>
                               </div>
-                              <div className="md:w-1/2">
+                              <div>
                                 <AddToCartButton
                                   addProductToCart={addProductToCart}
                                   productId={product._id}

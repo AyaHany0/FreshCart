@@ -82,7 +82,7 @@ export default function Login() {
         <title>Log in </title>
       </Helmet>
       <div className="relative lightBackground dark:darkBackground ">
-        <div className="relative p-4 pt-16">
+        <div className="relative p-4 pt-16 pb-12">
           <form
             onSubmit={handleSubmit}
             className="bg-white dark:bg-black dark:text-white max-w-xl w-full mx-auto shadow-[0_2px_10px_-3px_rgba(26,83,0.3)] p-8 rounded-2xl"
@@ -215,7 +215,7 @@ export default function Login() {
               )}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col justify-center items-center">
               <button
                 disabled={isLoading}
                 type="submit"
@@ -223,7 +223,7 @@ export default function Login() {
               >
                 Log In {isLoading && <ImSpinner9 className="loaderIcon" />}
               </button>
-              <p className="text-black-800 text-sm mt-8 text-center dark:text-white">
+              <p className="text-black text-sm mt-8 text-center dark:text-white mx-auto">
                 Don't have account yet?
                 <Link
                   to={"/register"}

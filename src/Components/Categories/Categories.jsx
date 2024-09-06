@@ -144,7 +144,7 @@ export default function Categories() {
                 </button>
               </div>
               <div className="p-4 md:p-5 space-y-4">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 text-center dark:text-white">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-5 text-center dark:text-white">
                   {subCategoriesData?.map((subCate, index) => (
                     <span
                       key={index}

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import lightPattern from "../../assets/imgs/light-patten.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ImSpinner9 } from "react-icons/im";
 import { Helmet } from "react-helmet";
 
@@ -52,8 +51,6 @@ export default function ResetPassword() {
       setTimeout(() => {
         navigate("/");
       }, 500);
-
-      //************** Handle the navigate  */
     } catch (error) {
       if (
         error.response &&

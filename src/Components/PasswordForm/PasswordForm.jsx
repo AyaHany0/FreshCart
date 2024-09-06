@@ -1,4 +1,3 @@
-import lightPattern from "../../assets/imgs/light-patten.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -41,7 +40,6 @@ export default function PasswordForm() {
         navigate("/verifycode");
       }, 600);
       localStorage.setItem("userEmail", values.email);
-      //************** Handle the navigate  */
     } catch (error) {
       if (
         error.response &&
@@ -65,13 +63,13 @@ export default function PasswordForm() {
         <div className="relative p-4 pt-16 dark:text-white">
           <form
             onSubmit={handleSubmit}
-            className="bg-white dark:bg-black max-w-xl w-full mx-auto shadow-[0_2px_10px_-3px_rgba(26,83,0.3)] p-8 rounded-2xl mb-10"
+            className="bg-white dark:bg-black max-w-xl text-center w-full mx-auto shadow-[0_2px_10px_-3px_rgba(26,83,0.3)] p-8 rounded-2xl mb-10"
           >
             <div>
               <h3 className="text-black-800 text-3xl font-bold text-center mb-6">
                 Forget password?
               </h3>
-              <hr class="h-px mt-6 mx-8 bg-green-400 border-0 dark:bg-gray-700"></hr>
+              <hr class="h-px mt-6 mx-8 bg-green-400 border-0 dark:bg-gray-700 "></hr>
 
               <p className="mt-4 ">
                 Please enter your email address to search for your account.

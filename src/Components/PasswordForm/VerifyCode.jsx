@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import lightPattern from "../../assets/imgs/light-patten.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useFormik } from "formik";
@@ -50,7 +49,7 @@ export default function VerifyCode() {
       console.log(data);
 
       toast.success("Reset code submitted!");
-      //************** Handle the navigate  */
+      navigate("/resetpassword");
     } catch (error) {
       if (
         error.response &&
@@ -139,7 +138,7 @@ export default function VerifyCode() {
           <form
             onSubmit={handleSubmit}
             id="resetCode-form"
-            className="bg-white dark:bg-black dark:text-white max-w-xl w-full mx-auto shadow-[0_2px_10px_-3px_rgba(26,83,0.3)] p-8 rounded-2xl mb-10"
+            className="bg-white  dark:bg-black  dark:text-white max-w-xl w-full mx-auto shadow-[0_2px_10px_-3px_rgba(26,83,0.3)] p-8 rounded-2xl mb-10"
           >
             <div>
               <h3 className="text-black-800 text-3xl font-bold text-center mb-6">
@@ -175,9 +174,9 @@ export default function VerifyCode() {
               </div>
             )}
 
-            <div className="mt-8">
+            <div className="mt-8 text-center">
               <button
-                onClick={() => navigate("/resetpassword")}
+                onClick={() => verify()}
                 type="submit"
                 className="w-full shadow-xl py-2.5 px-5 text-sm font-semibold tracking-wider rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none transition-all"
               >
