@@ -28,8 +28,13 @@ import CartContextProvider from "./Context/CartContext";
 import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useEffect } from "react";
+import { initFlowbite } from "flowbite";
 
 function App() {
+  useEffect(() => {
+    initFlowbite();
+  }, []);
   const queryClient = new QueryClient();
 
   let router = createBrowserRouter([

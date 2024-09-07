@@ -68,7 +68,7 @@ export default function ResetPassword() {
   return (
     <div>
       <Helmet>
-        <title>Reser Password</title>
+        <title>Reset Password</title>
       </Helmet>
       <div className="relative lightBackground dark:darkBackground ">
         <div className="relative p-4 pt-16">
