@@ -36,23 +36,26 @@ body {
 @layer utilities {
   .darkBackground {
     background-image: url("./assets/imgs/dark-pattern.svg");
-
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    object-fit: fill;
   }
 }
 @layer utilities {
   .darkcustomBackground {
     background-image: url("./assets/imgs/dark-pattern.svg");
     background-repeat: no-repeat;
-    background-size: 130% 140%;
+    background-size: cover;
+    background-position: center;
+    object-fit: fill;
   }
 }
 
 @layer utilities {
   .lightBackground {
     background-image: url("./assets/imgs/light-patten.svg");
+    background-repeat: no-repeat;
+
     background-size: cover;
     background-position: center;
   }
@@ -70,4 +73,12 @@ body {
   background-color: green;
   border-radius: 50%;
   padding: 1px;
+}
+/* Custom Tailwind styles for Slick dots */
+
+.slick-dots li button:before {
+  color: rgb(15, 182, 15) !important;
+}
+.custom-dots li.slick-active button:before {
+  color: rgb(19, 147, 19) !important;
 }

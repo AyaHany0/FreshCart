@@ -161,7 +161,7 @@ export default function ProductDetails() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <p className="ml-2 ">
+                        <p className="ml-2 dark:text-white ">
                           {productdetails?.ratingsAverage}
                         </p>
                       </div>
@@ -189,8 +189,9 @@ export default function ProductDetails() {
                     <div className="mt-4">
                       <div className="text-green-800 dark:text-white flex justify-start items-center ">
                         <h5>{productdetails?.brand.name}</h5>
-                        <div className="w-20 h-14 ml-10 border-[1px] rounded-2xl p-2  border-green-500 ">
+                        <div className="w-20 h-14 ml-10 border-[1px] rounded-2xl p-2 dark:border-black border-green-500 ">
                           <img
+                            className="rounded-md"
                             src={productdetails?.brand.image}
                             alt={productdetails?.brand.name}
                           />

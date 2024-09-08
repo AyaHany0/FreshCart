@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Cart.module.css";
 export default function EmptyCart() {
   return (
-    <div>
+    <div className="dark:bg-black">
       <div className={style.emptyCart}>
         <svg
           viewBox="656 573 264 182"
@@ -377,9 +377,11 @@ export default function EmptyCart() {
             fill="none"
           />
         </svg>
-        <div className="text-center flex flex-col justify-center items-center">
+        <div className="text-center dark:text-white flex flex-col justify-center items-center">
           <h3>Shop now, worry later.</h3>
-          <p>Bringing home a cart full of happiness.</p>
+          <p className="dark:text-white">
+            Bringing home a cart full of happiness.
+          </p>
         </div>
       </div>
     </div>

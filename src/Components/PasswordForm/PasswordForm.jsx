@@ -90,7 +90,7 @@ export default function PasswordForm() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   type="text"
-                  className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-green-900 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
+                  className="w-full bg-transparent dark:text-white text-sm text-gray-800 border-b border-gray-300 focus:border-green-900 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                   placeholder="Enter email"
                 />
                 <svg
@@ -146,7 +146,8 @@ export default function PasswordForm() {
                 type="submit"
                 className="w-full flex justify-center items-center  disabled:bg-green-900 shadow-xl py-2.5 px-5 text-sm font-semibold tracking-wider rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none transition-all"
               >
-                Search {isLoading && <ImSpinner9 className="loaderIcon" />}
+                Send Verification code{" "}
+                {isLoading && <ImSpinner9 className="loaderIcon" />}
               </button>
             </div>
           </form>

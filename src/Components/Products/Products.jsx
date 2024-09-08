@@ -76,11 +76,11 @@ export default function Products() {
           >
             <SearchIcon search={search} searchTerm={searchTerm} />
           </motion.div>
-          <div className="pt-10 pb-8 container mx-auto dark:bg-black">
+          <div className="pt-10 pb-8  dark:bg-black">
             {filteredProducts.length === 0 ? (
               <div className="text-center">No products found</div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5 mx-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5 px-8">
                 {filteredProducts.map((product, index) => (
                   <Product key={index} product={product} />
                 ))}

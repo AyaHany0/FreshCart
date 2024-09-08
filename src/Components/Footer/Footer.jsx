@@ -36,16 +36,13 @@ export function Footer() {
               <div className=" sm:col-span-full md:col-span-3  ">
                 <input
                   type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full ps-6 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                   placeholder="Enter Email Address"
                   required
                 />
               </div>
               <div className="md:col-span-1 sm:col-span-2 grid self-center  ">
-                <button
-                  type="submit"
-                  className="inline-flex  col-span-2 items-center flex-nowrap self-center text-center justify-center font-bold leading-6 py-2 px-3 ms-2 text-sm text-white bg-[#0aad0a] rounded-lg border border-green-700 hover:bg-[#2bbf09] focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 whitespace-nowrap"
-                >
+                <button className="inline-flex  col-span-2 items-center flex-nowrap self-center text-center justify-center font-bold leading-6 py-2 px-3 ms-2 text-sm text-white bg-[#0aad0a] rounded-lg border border-green-700 hover:bg-[#2bbf09] focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 whitespace-nowrap">
                   <FaShareAlt className="mr-2" />
                   Share App Link
                 </button>

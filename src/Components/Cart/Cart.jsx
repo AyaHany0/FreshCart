@@ -171,10 +171,7 @@ export default function Cart() {
                           required
                         />
                       </div>
-                      <button
-                        type="submit"
-                        className="flex w-full items-center justify-center rounded-lg bg-[#0aad0a] px-5 py-2.5 text-sm font-medium text-white  hover:bg-[#0aad0a] focus:outline-none focus:ring-4 focus:ring-[#0f990a] dark:bg-[#0aad0a] dark:hover:bg-[#0aad0a] dark:focus:ring-[#0f990a]"
-                      >
+                      <button className="flex w-full items-center justify-center rounded-lg bg-[#0aad0a] px-5 py-2.5 text-sm font-medium text-white  hover:bg-[#0aad0a] focus:outline-none focus:ring-4 focus:ring-[#0f990a] dark:bg-[#0aad0a] dark:hover:bg-[#0aad0a] dark:focus:ring-[#0f990a]">
                         Apply Code
                       </button>
                     </form>

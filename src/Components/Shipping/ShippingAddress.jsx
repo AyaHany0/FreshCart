@@ -131,7 +131,7 @@ export default function ShippingAddress() {
       </Helmet>
       <div className="font-[sans-serif] bg-white dark:bg-black p-10 ">
         <div className="flex max-sm:flex-col gap-12 max-lg:gap-4 h-full ">
-          <div className="rounded-md bg-gradient-to-r from-[#077d07] via-[#0aad0a] to-[#077d07] sm:h-screen sm:sticky sm:top-0 lg:min-w-[370px] sm:min-w-[300px]">
+          <div className="rounded-md bg-gradient-to-r from-[#077d07e2] via-[#0aad0ada] to-[#077d07cf] sm:h-screen sm:sticky sm:top-0 lg:min-w-[370px] sm:min-w-[300px]">
             <div className="relative h-full">
               <div className="px-4 py-8 sm:overflow-auto sm:h-[calc(100vh-60px)]">
                 <div className="space-y-4">
@@ -141,22 +141,22 @@ export default function ShippingAddress() {
                       return (
                         <div
                           key={index}
-                          className="flex items-center justify-between gap-4"
+                          className="flex items-center justify-between gap-4 dark:text-white"
                         >
-                          <div className="w-32 h-28 max-lg:w-24 max-lg:h-24 flex p-3 shrink-0 bg-white rounded-md">
+                          <div className="w-32 h-28 max-lg:w-24 max-lg:h-24 flex p-3 shrink-0 bg-white rounded-md dark:text-white">
                             <img
                               src={product.product.imageCover}
                               className="w-full object-contain"
                             />
                           </div>
                           <div className="w-full">
-                            <h3 className="text-base text-white dark:text-black font-semibold ">
+                            <h3 className="text-base text-white  font-semibold dark:text-white">
                               {product.product.title
                                 .split(" ")
                                 .slice(0, 3)
                                 .join(" ")}
                             </h3>
-                            <ul className="text-xs text-white dark:text-black font-semibold space-y-2 mt-2">
+                            <ul className="text-xs text-white dark:text-white font-semibold space-y-2 mt-2 ">
                               <li className="flex flex-wrap gap-4">
                                 Quantity
                                 <span className="ml-auto">{product.count}</span>
@@ -177,7 +177,7 @@ export default function ShippingAddress() {
                 </div>
               </div>
               <div className="md:absolute md:left-0 md:bottom-0 bg-[rgb(10,173,10)] w-full p-4 rounded-md">
-                <h4 className="flex flex-wrap gap-4 text-base text-white dark:text-black ">
+                <h4 className="flex flex-wrap gap-4 text-base text-white dark:text-white ">
                   Total
                   <span className="ml-auto">
                     {cartData?.data.totalCartPrice} EGY

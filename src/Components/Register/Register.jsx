@@ -93,7 +93,7 @@ export default function Register() {
       <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className="lightBackground dark:darkcustomBackground bg-white ">
+      <div className="lightBackground  dark:darkBackground bg-white ">
         <div className="relative  ">
           <div className="relative p-4 pt-16 ">
             <form
@@ -119,7 +119,7 @@ export default function Register() {
                     onBlur={handleBlur}
                     name="name"
                     type="text"
-                    className="w-full bg-transparent text-sm text-gray-800 dark:text-white border-b border-gray-300 focus:border-green-500 px-2 py-3 outline-none focus:outline-none focus:ring-0  focus:ring-green-600"
+                    className="w-full bg-transparent dark:text-white text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                     placeholder="Enter name"
                   />
                   <svg
@@ -167,7 +167,7 @@ export default function Register() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     type="text"
-                    className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
+                    className="w-full bg-transparent dark:text-white text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                     placeholder="Enter email"
                   />
                   <svg
@@ -230,7 +230,7 @@ export default function Register() {
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
+                    className="w-full bg-transparent dark:text-white text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                     placeholder="Enter password"
                   />
                   <svg
@@ -278,7 +278,7 @@ export default function Register() {
                     value={values.rePassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
+                    className="w-full bg-transparent text-sm dark:text-white text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                     placeholder="Enter re-password"
                   />
                   <svg
@@ -326,7 +326,7 @@ export default function Register() {
                     value={values.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
+                    className="w-full bg-transparent dark:text-white text-sm text-gray-800 border-b border-gray-300 focus:border-green-500 focus:outline-none focus:ring-0  focus:ring-green-600 px-2 py-3 outline-none"
                     placeholder="Enter phone"
                   />
                   <svg
@@ -364,7 +364,7 @@ export default function Register() {
                 >
                   Register {isLoading && <ImSpinner9 className="loaderIcon" />}
                 </button>
-                <p className="text-black text-sm mt-8 text-center">
+                <p className="text-black dark:text-white text-sm mt-8 text-center">
                   Already have an account?
                   <Link
                     to={"/login"}

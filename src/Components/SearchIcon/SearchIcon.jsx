@@ -2,8 +2,8 @@ import React from "react";
 import style from "./SearchIcons.module.css";
 export default function SearchIcon({ searchTerm, search }) {
   return (
-    <div className="w-9 h-9 dark:bg-black">
-      <div className="dark:bg-black">
+    <div className="w-0">
+      <div>
         <div className={style.searchBox}>
           <button className={style.btnSearch}>
             <svg
@@ -18,7 +18,7 @@ export default function SearchIcon({ searchTerm, search }) {
             </svg>
           </button>
           <input
-            type="search"
+            // type="search"
             value={searchTerm}
             onChange={search}
             className={style.inputSearch}

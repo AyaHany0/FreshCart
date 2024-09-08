@@ -5,11 +5,11 @@ export default function Profile() {
 
   return (
     <div className="dark:bg-black py-10">
-      <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-white w-full pb-6 shadow-lg rounded-xl pt-16">
+      <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-white dark:bg-gray-900 dark:text-white w-full pb-6 shadow-lg rounded-xl pt-16">
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
             <div className="w-full flex justify-center">
-              <div className="relative">
+              <div className="relative dark:bg-white rounded-full p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
@@ -21,15 +21,15 @@ export default function Profile() {
             </div>
           </div>
           <div className="text-center pt-5">
-            <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+            <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase dark:text-white ">
               {userData.role}
             </div>
-            <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">
+            <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1 dark:text-white">
               {userData.name}
             </h3>
           </div>
           <div className="mt-6 py-6 border-t border-slate-200 text-center flex justify-center items-center">
-            <p className="font-semibold ">{userData.email}</p>
+            <p className="font-semibold dark:text-white">{userData.email}</p>
           </div>
         </div>
       </div>

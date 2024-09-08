@@ -32,7 +32,7 @@ export function Home() {
   });
 
   let settings = {
-    dots: false,
+    dots: true,
     arrows: false,
     infinite: true,
     speed: 100,
@@ -40,6 +40,7 @@ export function Home() {
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    dotsClass: "slick-dots custom-dots",
   };
   let catesettings = {
     dots: false,

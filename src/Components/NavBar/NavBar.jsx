@@ -46,7 +46,7 @@ export function NavBar() {
   }, [isDarkMode]);
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-black">
+    <nav className="bg-white z-[10000] border-gray-200 dark:bg-black">
       <div className="max-w-screen-xl flex gap-5 flex-wrap items-center mx-auto p-4">
         <a className="flex  text-3xl items-center space-x-3 rtl:space-x-reverse ">
           <img src={isDarkMode ? lightlogo : logo} alt="FreshCart" />
@@ -55,7 +55,7 @@ export function NavBar() {
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex ms-auto items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-xl xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex ms-auto items-center  p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-xl xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -78,10 +78,10 @@ export function NavBar() {
         </button>
 
         <div
-          className="hidden w-full grow  xl:flex justify-between xl:w-auto "
+          className="hidden w-full grow  xl:flex justify-between xl:w-auto z-[10000] bg-white dark:bg-black "
           id="navbar-default"
         >
-          <ul className="font-medium flex items-center flex-col p-4 xl:p-0 mt-4 border border-gray-100 rounded-xl bg-gray-50 xl:flex-row xl:space-x-8 rtl:space-x-reverse xl:mt-0 xl:border-0 xl:bg-white dark:bg-black xl:dark:bg-black dark:border-gray-700">
+          <ul className="font-medium z-[10000] flex items-center flex-col p-4 xl:p-0 mt-4 border border-gray-100 rounded-xl bg-gray-50 xl:flex-row xl:space-x-8 rtl:space-x-reverse xl:mt-0 xl:border-0 xl:bg-white dark:bg-black xl:dark:bg-black dark:border-gray-700">
             {userToken && (
               <>
                 <li>
@@ -183,7 +183,7 @@ export function NavBar() {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
-                      className="w-5 h-5 rounded-full dark:text-white dark:bg-white"
+                      className="w-7 h-7 bg-white p-1 rounded-full dark:text-white dark:bg-white"
                     >
                       <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
@@ -209,37 +209,37 @@ export function NavBar() {
             <li className="flex gap-4">
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaFacebook />
               </a>
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaTwitter />
               </a>
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaYoutube />
               </a>
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaTiktok />
               </a>
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaInstagram />
               </a>
               <a
                 to="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
+                className="block  cursor-pointer py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-green-700 xl:p-0 dark:text-white xl:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white xl:dark:hover:bg-transparent"
               >
                 <FaLinkedinIn />
               </a>
